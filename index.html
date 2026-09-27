@@ -6,93 +6,68 @@
     <title>Boss Hub - Key System</title>
     <style>
         body {
-            background-color: #0f0f0f;
-            color: #f0f0f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
         }
         .container {
-            background: #161616;
-            border: 2px solid #be1414;
-            border-radius: 14px;
+            background: #1e293b;
             padding: 30px;
-            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             text-align: center;
-            box-shadow: 0 10px 30px rgba(190, 20, 20, 0.3);
+            max-width: 400px;
+            width: 90%;
         }
-        h2 {
-            color: #ff1e1e;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #a0a0a0;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .key-box {
-            background: #222;
-            border: 1px dashed #be1414;
-            padding: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #fff;
-            letter-spacing: 2px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            word-break: break-all;
-        }
+        h1 { margin-bottom: 10px; color: #38bdf8; font-size: 24px; }
+        p { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
         .btn {
-            background: linear-gradient(135deg, #3296ff, #1450b4);
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #3b82f6;
             color: white;
             border: none;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: bold;
             border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
+            text-decoration: none;
+            box-sizing: border-box;
+            transition: background 0.2s;
         }
-        .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
-        }
-        .success {
-            color: #3cc850;
-            font-size: 12px;
-            margin-top: 10px;
-            display: none;
+        .btn:hover { background: #2563eb; }
+        .key-box {
+            margin-top: 15px;
+            padding: 12px;
+            background: #0f172a;
+            border: 1px dashed #475569;
+            border-radius: 6px;
+            word-break: break-all;
+            font-family: monospace;
+            color: #38bdf8;
+            font-size: 15px;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h2>BOSS HUB</h2>
-        <p>Вы успешно прошли LootLabs! Ваш ключ:</p>
+        <h1>Boss Hub Key System</h1>
+        <p>Пройди короткую ссылку через Linklothbas, чтобы разблокировать ключ доступа к скрипту.</p>
         
-        <div class="key-box" id="keyText">BOSS-X7K2M9</div>
-
-        <button class="btn" onclick="copyKey()">COPY KEY</button>
-        <div class="success" id="successMsg">Ключ успешно скопирован в буфер обмена!</div>
+        <!-- ВСТАВЬ СВОЮ ССЫЛКУ В КАВЫЧКИ ВМЕСТО ЭТОГО ТЕКСТА -->
+        <a href="ТВОЯ_ССЫЛКА_LINKLOTHBAS_ЗДЕСЬ" class="btn" target="_blank">Получить ключ (Шаг 1)</a>
+        
+        <div style="margin-top: 20px;">
+            <p style="margin-bottom: 8px;">Твой ключ:</p>
+            <div class="key-box">BOSS-HUB-2026-RELEASE</div>
+        </div>
     </div>
-
-    <script>
-        function copyKey() {
-            const key = document.getElementById("keyText").innerText;
-            navigator.clipboard.writeText(key).then(() => {
-                const msg = document.getElementById("successMsg");
-                msg.style.display = "block";
-                setTimeout(() => {
-                    msg.style.display = "none";
-                }, 3000);
-            });
-        }
-    </script>
 </body>
-  </html>
-                                                                                      
+</html>
