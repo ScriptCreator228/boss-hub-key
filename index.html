@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Hub - Key System</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #161616;
+            border: 2px solid #be1414;
+            border-radius: 14px;
+            padding: 30px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(190, 20, 20, 0.3);
+        }
+        h2 {
+            color: #ff1e1e;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .key-box {
+            background: #222;
+            border: 1px dashed #be1414;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 2px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+        .btn {
+            background: linear-gradient(135deg, #3296ff, #1450b4);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        .success {
+            color: #3cc850;
+            font-size: 12px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>BOSS HUB</h2>
+        <p>Вы успешно прошли LootLabs! Ваш ключ:</p>
+        
+        <div class="key-box" id="keyText">BOSS-X7K2M9</div>
+
+        <button class="btn" onclick="copyKey()">COPY KEY</button>
+        <div class="success" id="successMsg">Ключ успешно скопирован в буфер обмена!</div>
+    </div>
+
+    <script>
+        function copyKey() {
+            const key = document.getElementById("keyText").innerText;
+            navigator.clipboard.writeText(key).then(() => {
+                const msg = document.getElementById("successMsg");
+                msg.style.display = "block";
+                setTimeout(() => {
+                    msg.style.display = "none";
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+  </html>
+                                                                                      
